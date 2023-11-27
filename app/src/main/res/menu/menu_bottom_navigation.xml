@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:checked="true"
+        android:title="Analog"
+        android:id="@+id/menu_analog"/>
+
+    <item
+        android:checked="false"
+        android:title="Digital"
+        android:id="@+id/menu_digital"
+        android:icon="@drawable/ic_launcher_background"/>
+    <item
+        android:checked="false"
+        android:title="Map"
+        android:id="@+id/menu_gps_map"/>
+</menu>

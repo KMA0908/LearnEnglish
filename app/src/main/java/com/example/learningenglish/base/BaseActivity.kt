@@ -1,0 +1,61 @@
+package com.example.learningenglish.base
+
+import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.FragmentTransaction
+import com.example.learningenglish.callback.OnActionCallBack
+import com.example.learningenglish.R
+
+abstract class BaseActivity<BD: ViewDataBinding, VM: BaseViewModel>: AppCompatActivity(),
+    OnActionCallBack {
+    protected lateinit var binding: BD
+    private lateinit var mViewModel: VM
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, getLayoutId())
+        mViewModel = getVM()
+        initViews()
+    }
+
+    override fun showFrg(backTag: String, data: Any?, tag: String, isBacked: Boolean) {
+        try {
+            val clazz = Class.forName(tag)
+            val constructor = clazz.getConstructor()
+            val frg = constructor.newInstance() as BaseFragment<*>
+
+            frg.callBack = this
+            frg.mData = data
+
+            val trans: FragmentTransaction = supportFragmentManager.beginTransaction()
+            if (isBacked) {
+                trans.addToBackStack(backTag)
+            }
+            trans.replace(R.id.ln_main, frg).commit()
+        } catch (e: Exception) {
+            showNotify("Err: " + e.message)
+            e.printStackTrace()
+        }
+    }
+
+    override fun showFrg(backTag: String, tag: String, isBacked: Boolean) {
+        showFrg(backTag, null, tag, isBacked)
+    }
+
+    override fun closeApp() {
+        finish()
+    }
+
+    protected fun showNotify(sms: String) {
+        Toast.makeText(this, sms, Toast.LENGTH_SHORT).show()
+    }
+
+    abstract fun getVM(): VM
+
+    abstract fun initViews()
+
+    abstract fun getLayoutId(): Int
+}
