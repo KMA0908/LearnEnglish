@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Learning English</string>
+    <string name="account">Tài khoản</string>
+    <string name="password">Mật khẩu</string>
+    <string name="forget_password"><u>Quên mật khẩu?</u></string>
+    <string name="sign_up_format"><u>Đăng ký</u></string>
+    <string name="login">Đăng nhập</string>
+    <string name="email">Email</string>
+    <string name="re_enter_password">Nhập lại mật khẩu</string>
+    <string name="sign_up">Đăng ký</string>
+    <string name="confirm">Xác nhận</string>
+    <string name="msg_empty_field_sign_up">Không được để trống các trường thông tin.</string>
+    <string name="msg_mismatch_confirm_password">Mật khẩu xác nhận không khớp với mật khẩu. Vui lòng kiểm tra lại.</string>
+    <string name="msg_mail_not_verified">Email sử dụng chưa được xác thực, vui lòng kiểm tra mail của bạn.</string>
+    <string name="msg_sign_up_successfully">Tài khoản đăng ký thành công, vui lòng kiểm tra email để xác thực và tiếp tục sử dụng tài khoản</string>
 </resources>
