@@ -13,4 +13,7 @@
     <string name="msg_mismatch_confirm_password">Mật khẩu xác nhận không khớp với mật khẩu. Vui lòng kiểm tra lại.</string>
     <string name="msg_mail_not_verified">Email sử dụng chưa được xác thực, vui lòng kiểm tra mail của bạn.</string>
     <string name="msg_sign_up_successfully">Tài khoản đăng ký thành công, vui lòng kiểm tra email để xác thực và tiếp tục sử dụng tài khoản</string>
+    <string name="title_reset_password">Nhập email reset mật khẩu</string>
+    <string name="send_mail">Gửi mail</string>
+    <string name="msg_sent_reset_mail">Mail reset mật khẩu đã gửi vào mail của bạn, vui lòng kiểm tra</string>
 </resources>

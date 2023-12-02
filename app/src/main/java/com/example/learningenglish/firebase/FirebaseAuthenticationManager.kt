@@ -16,7 +16,7 @@ object FirebaseAuthenticationManager {
                 sendVerificationMail(onSuccess)
             } else {
                 it.exception?.let { exception ->
-                    val message = exception.message ?: ""
+                    val message = exception.message ?: "Lỗi không xác định"
                     onFail.invoke(message)
                 }
             }
@@ -32,7 +32,7 @@ object FirebaseAuthenticationManager {
                 onSuccess.invoke()
             } else {
                 it.exception?.let { exception ->
-                    val message = exception.message ?: ""
+                    val message = exception.message ?: "Lỗi không xác định"
                     onFail.invoke(message)
                 }
             }
@@ -40,6 +40,19 @@ object FirebaseAuthenticationManager {
     }
 
     fun isMailVerified(): Boolean = auth.currentUser?.isEmailVerified ?: false
+
+    fun sendResetMail(email: String, onSuccess: () -> Unit = {}, onFail: (String) -> Unit = {}) {
+        auth.sendPasswordResetEmail(email).addOnCompleteListener {
+            if (it.isSuccessful) {
+                onSuccess.invoke()
+            } else {
+                it.exception?.let { exception ->
+                    val message = exception.message ?: "Lỗi không xác định"
+                    onFail.invoke(message)
+                }
+            }
+        }
+    }
 
     private fun sendVerificationMail(onSuccess: () -> Unit = {}) {
         val user = auth.currentUser

@@ -51,6 +51,15 @@ class LoginFragment: BaseFragment<FragmentLoginBinding>(){
                 ViewUtils.showMessageDialog(parentFragmentManager, it)
             })
         }
+        binding.tvForgetPassword.setOnClickListener {
+            val transAnim = FragmentTransactionAnim().apply {
+                this.enter = R.anim.in_screen_right_to_left
+                this.exit = R.anim.out_screen_right_to_left
+                this.popEnter = R.anim.in_screen_left_to_right
+                this.popExit = R.anim.out_screen_left_to_right
+            }
+            callBack?.showFrg(TAG, null, ResetPasswordFragment.TAG, true, transAnim)
+        }
     }
 
     override fun getLayoutId(): Int = R.layout.fragment_login
