@@ -3,6 +3,7 @@ package com.example.learningenglish.di
 import android.content.Context
 import android.location.LocationManager
 import com.example.learningenglish.database.AppDatabase
+import com.example.learningenglish.viewmodel.LoginViewModel
 import com.example.learningenglish.viewmodel.MainViewModel
 import com.example.learningenglish.viewmodel.SplashViewModel
 import org.koin.android.ext.koin.androidContext
@@ -14,4 +15,5 @@ val KoinModule = module {
         factory { androidContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager }
         viewModel { MainViewModel() }
         viewModel { SplashViewModel() }
+        viewModel { LoginViewModel() }
 }

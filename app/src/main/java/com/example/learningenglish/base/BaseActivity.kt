@@ -8,6 +8,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentTransaction
 import com.example.learningenglish.callback.OnActionCallBack
 import com.example.learningenglish.R
+import com.example.learningenglish.share.FragmentTransactionAnim
 
 abstract class BaseActivity<BD: ViewDataBinding, VM: BaseViewModel>: AppCompatActivity(),
     OnActionCallBack {
@@ -21,7 +22,7 @@ abstract class BaseActivity<BD: ViewDataBinding, VM: BaseViewModel>: AppCompatAc
         initViews()
     }
 
-    override fun showFrg(backTag: String, data: Any?, tag: String, isBacked: Boolean) {
+    override fun showFrg(backTag: String, data: Any?, tag: String, isBacked: Boolean, anim: FragmentTransactionAnim?) {
         try {
             val clazz = Class.forName(tag)
             val constructor = clazz.getConstructor()
@@ -31,6 +32,9 @@ abstract class BaseActivity<BD: ViewDataBinding, VM: BaseViewModel>: AppCompatAc
             frg.mData = data
 
             val trans: FragmentTransaction = supportFragmentManager.beginTransaction()
+            anim?.let {
+                trans.setCustomAnimations(it.enter, it.exit, it.popEnter, it.popExit)
+            }
             if (isBacked) {
                 trans.addToBackStack(backTag)
             }
@@ -42,7 +46,7 @@ abstract class BaseActivity<BD: ViewDataBinding, VM: BaseViewModel>: AppCompatAc
     }
 
     override fun showFrg(backTag: String, tag: String, isBacked: Boolean) {
-        showFrg(backTag, null, tag, isBacked)
+        showFrg(backTag, null, tag, isBacked, null)
     }
 
     override fun closeApp() {
