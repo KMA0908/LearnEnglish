@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/img_back_topic"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/icon_arrow_back"
+            app:tint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            ></ImageView>
+        <LinearLayout
+            android:id="@+id/linearLayout_topic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintStart_toStartOf="@id/img_back_topic"
+            app:layout_constraintTop_toTopOf="@id/img_back_topic"
+            >
+
+
+
+            <TextView
+                android:id="@+id/tv_topic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Topic"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                ></TextView>
+        </LinearLayout>
+
+
+
+
+
+        <View
+            android:id="@+id/line_topic"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout_topic"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+
+
+            ></View>
+
+        <LinearLayout
+            android:id="@+id/linearlayout_topic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/line_topic"
+            app:layout_constraintEnd_toEndOf="@id/line_topic"
+            app:layout_constraintTop_toBottomOf="@+id/line_topic"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp">
+
+
+                <LinearLayout
+                    android:id="@+id/linearlayout_topic_sort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_add" />
+                    <TextView
+                        android:id="@+id/textview_topic_sort"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dialog"
+                        android:text="Add topic"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+
+
+                </LinearLayout>
+
+
+
+                <ProgressBar
+                    android:id="@+id/progressbar_topic_load"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearnear_topic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/linearlayout_topic"
+            app:layout_constraintEnd_toEndOf="@id/linearlayout_topic"
+            app:layout_constraintTop_toBottomOf="@+id/linearlayout_topic"
+
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_topic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_below="@+id/linearlayout_topic"
+                android:overScrollMode="never" />
+
+
+
+
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

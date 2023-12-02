@@ -9,7 +9,7 @@
         android:orientation="vertical">
 
         <include
-            android:id="@+id/actionbar_home"
+            android:id="@+id/actionbar_profile"
             layout="@layout/actionbar_home" />
 
         <RelativeLayout
@@ -17,15 +17,15 @@
             android:layout_height="match_parent">
 
             <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/vp_home_gps"
+                android:id="@+id/vp_profile_gps"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_above="@id/layout_bottom_bar"
+                android:layout_above="@id/layout_bottom_bar_profile"
                 android:layout_alignParentTop="true" />
 
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/layout_bottom_bar"
+                android:id="@+id/layout_bottom_bar_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -37,16 +37,9 @@
                 app:itemTextColor="@color/white"
                 app:menu="@menu/menu_bottom_navigation" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview_list_topic_home"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:overScrollMode="never" />
 
 
         </RelativeLayout>
 
     </LinearLayout>
 </layout>
-

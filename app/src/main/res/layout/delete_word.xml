@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDeleteWord"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Delete word"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/tvDeleteWordText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="Do you want to delete this word?"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvDeleteWord"
+        app:layout_constraintTop_toBottomOf="@id/tvDeleteWord"
+
+
+
+        ></TextView>
+
+    <EditText
+        android:id="@+id/edDeleteWord"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvDeleteWordText"
+        app:layout_constraintStart_toStartOf="@+id/tvDeleteWordText"
+        app:layout_constraintTop_toBottomOf="@+id/tvDeleteWordText"
+        ></EditText>
+    
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edDeleteWord"
+        app:layout_constraintStart_toStartOf="@+id/edDeleteWord"
+        app:layout_constraintTop_toBottomOf="@+id/edDeleteWord"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonCancelDeleteWord"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            ></androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonConfirmDeleteWord"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="Confirm"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            ></androidx.appcompat.widget.AppCompatButton>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
