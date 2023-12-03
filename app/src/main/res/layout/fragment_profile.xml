@@ -23,6 +23,169 @@
                 android:layout_above="@id/layout_bottom_bar_profile"
                 android:layout_alignParentTop="true" />
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageUser"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:src="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textSize="20sp"
+                    android:layout_margin="20dp"
+                    app:layout_constraintStart_toStartOf="@id/imageUser"
+                    app:layout_constraintTop_toBottomOf="@+id/imageUser"
+                    app:layout_constraintEnd_toEndOf="@+id/imageUser"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_settings_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvUserName"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/search_box_background"
+                    android:id="@+id/linear_edit_profile"
+                    app:layout_constraintStart_toStartOf="@id/tv_settings_profile"
+                    app:layout_constraintTop_toBottomOf="@id/tv_settings_profile">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_search"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/settings_items_background"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_edit_profile"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Edit profile"
+                        android:textStyle="bold"
+                        android:layout_marginStart="15dp"
+                        android:layout_gravity="center_vertical"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_arrow_right"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_change_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/search_box_background"
+                    app:layout_constraintStart_toStartOf="@id/linear_edit_profile"
+                    app:layout_constraintTop_toBottomOf="@id/linear_edit_profile">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_billing"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/settings_items_background"
+                        android:backgroundTint="#FF9800"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_change_password"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Change password"
+                        android:textStyle="bold"
+                        android:layout_marginStart="15dp"
+                        android:layout_gravity="center_vertical"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_arrow_right"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_log_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/search_box_background"
+                    app:layout_constraintStart_toStartOf="@id/linear_change_password"
+                    app:layout_constraintTop_toBottomOf="@id/linear_change_password">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_logout"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/settings_items_background"
+                        android:backgroundTint="#ff5823"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_log_out"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Log out"
+                        android:textStyle="bold"
+                        android:layout_marginStart="15dp"
+                        android:layout_gravity="center_vertical"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_arrow_right"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/layout_bottom_bar_profile"
