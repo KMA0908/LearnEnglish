@@ -21,4 +21,8 @@ class LoginViewModel: BaseViewModel() {
     }
 
     fun isUserEmailVerified() = firebaseAuthManager.isMailVerified()
+
+    fun sendResetPassword(email: String, onSuccess: (() -> Unit) = {}, onFail: ((String) -> Unit) = {}) {
+        firebaseAuthManager.sendResetMail(email, onSuccess, onFail)
+    }
 }
