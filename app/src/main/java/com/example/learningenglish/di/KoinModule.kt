@@ -2,6 +2,7 @@ package com.example.learningenglish.di
 
 import android.content.Context
 import android.location.LocationManager
+import com.example.learningenglish.database.SQLHelper
 import com.example.learningenglish.viewmodel.FolderViewModel
 import com.example.learningenglish.viewmodel.LoginViewModel
 import com.example.learningenglish.viewmodel.MainViewModel
@@ -16,4 +17,5 @@ val KoinModule = module {
         viewModel { SplashViewModel() }
         viewModel { LoginViewModel() }
         viewModel { FolderViewModel() }
+        single { SQLHelper(androidContext()) }
 }

@@ -30,6 +30,7 @@
                 android:textSize="@dimen/text_18"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/edt_name_folder"
                 android:layout_marginStart="@dimen/d_16"
                 android:layout_marginTop="@dimen/d_12"
                 android:layout_marginEnd="@dimen/d_16"

@@ -8,17 +8,19 @@ import com.example.learningenglish.activity.AddFolderActivity
 import com.example.learningenglish.activity.FolderDetailActivity
 import com.example.learningenglish.adapter.FolderAdapter
 import com.example.learningenglish.base.BaseFragment
+import com.example.learningenglish.database.SQLHelper
 import com.example.learningenglish.databinding.FragmentFolderBinding
-import com.example.learningenglish.model.Folder
 import com.example.learningenglish.viewmodel.FolderViewModel
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FolderFragment : BaseFragment<FragmentFolderBinding>() {
+    private val sqlHelper: SQLHelper by inject()
     private lateinit var folderAdapter: FolderAdapter
     override fun getVM(): ViewModel = viewModel
     private val viewModel: FolderViewModel by viewModel()
     override fun initViews() {
-        val listFolder = arrayListOf<Folder>()
+        val listFolder = sqlHelper.getAllFolder()
         folderAdapter = FolderAdapter(listFolder) {
             val intent = Intent(activity, FolderDetailActivity::class.java)
             intent.putExtra(FolderDetailActivity.FOLDER_ID, it)
