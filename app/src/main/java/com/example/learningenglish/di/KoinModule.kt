@@ -3,6 +3,7 @@ package com.example.learningenglish.di
 import android.content.Context
 import android.location.LocationManager
 import com.example.learningenglish.database.AppDatabase
+import com.example.learningenglish.viewmodel.FolderViewModel
 import com.example.learningenglish.viewmodel.LoginViewModel
 import com.example.learningenglish.viewmodel.MainViewModel
 import com.example.learningenglish.viewmodel.SplashViewModel
@@ -16,4 +17,5 @@ val KoinModule = module {
         viewModel { MainViewModel() }
         viewModel { SplashViewModel() }
         viewModel { LoginViewModel() }
+        viewModel { FolderViewModel() }
 }

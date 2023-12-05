@@ -24,11 +24,22 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-
+                when (position) {
+                    0 -> binding.layoutBottomBar.menu.findItem(R.id.menu_folder).isChecked = true
+                    1 -> binding.layoutBottomBar.menu.findItem(R.id.menu_topic).isChecked = true
+                    2 -> binding.layoutBottomBar.menu.findItem(R.id.menu_public).isChecked = true
+                    3 -> binding.layoutBottomBar.menu.findItem(R.id.menu_profile).isChecked = true
+                }
             }
         })
-        binding.layoutBottomBar.setOnItemSelectedListener { item ->
 
+        binding.layoutBottomBar.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.menu_folder -> binding.vpHomeGps.currentItem = 0
+                R.id.menu_topic -> binding.vpHomeGps.currentItem = 1
+                R.id.menu_public -> binding.vpHomeGps.currentItem = 2
+                R.id.menu_profile -> binding.vpHomeGps.currentItem = 3
+            }
             true
         }
     }

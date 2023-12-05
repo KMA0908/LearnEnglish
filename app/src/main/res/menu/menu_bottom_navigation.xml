@@ -3,16 +3,23 @@
 
     <item
         android:checked="true"
-        android:title="Analog"
-        android:id="@+id/menu_analog"/>
+        android:title="Folder"
+        android:icon="@drawable/ic_folder"
+        android:id="@+id/menu_folder"/>
 
     <item
         android:checked="false"
-        android:title="Digital"
-        android:id="@+id/menu_digital"
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/ic_topic"
+        android:title="Topic"
+        android:id="@+id/menu_topic" />
     <item
         android:checked="false"
-        android:title="Map"
-        android:id="@+id/menu_gps_map"/>
+        android:icon="@drawable/ic_public"
+        android:title="Public"
+        android:id="@+id/menu_public"/>
+    <item
+        android:checked="false"
+        android:title="Profile"
+        android:icon="@drawable/ic_profile"
+        android:id="@+id/menu_profile"/>
 </menu>
