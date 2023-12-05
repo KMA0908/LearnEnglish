@@ -37,12 +37,7 @@
                 app:itemTextColor="@color/white"
                 app:menu="@menu/menu_bottom_navigation" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview_list_topic_home"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:overScrollMode="never" />
+
 
 
         </RelativeLayout>

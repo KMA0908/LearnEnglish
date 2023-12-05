@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:checked="true"
-        android:title="Home"
-        android:id="@+id/homeFragment"
-        android:icon="@drawable/ic_home"/>
+
 
     <item
         android:checked="false"
@@ -19,7 +15,7 @@
         android:icon="@drawable/ic_study"/>
 
     <item
-        android:checked="false"
+        android:checked="true"
         android:title="Profile"
         android:id="@+id/profileFragment"
         android:icon="@drawable/ic_profile"/>
