@@ -1,7 +1,6 @@
 package com.example.learningenglish
 
 import android.app.Application
-import com.example.learningenglish.database.AppDatabase
 import com.example.learningenglish.di.KoinModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger

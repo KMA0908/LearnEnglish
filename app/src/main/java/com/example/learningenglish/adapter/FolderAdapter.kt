@@ -1,0 +1,34 @@
+package com.example.learningenglish.adapter
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.example.learningenglish.databinding.ItemFolderBinding
+import com.example.learningenglish.model.Folder
+
+class FolderAdapter(
+    private var folderList: List<Folder>,
+    private val onItemClick: (folder: Folder) -> Unit
+) : RecyclerView.Adapter<FolderAdapter.FolderViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FolderViewHolder {
+        val binding = ItemFolderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return FolderViewHolder(binding)
+    }
+
+    override fun getItemCount(): Int = folderList.size
+
+    override fun onBindViewHolder(holder: FolderViewHolder, position: Int) {
+        val folder = folderList[position]
+        holder.bind(folder)
+    }
+
+    inner class FolderViewHolder(private val binding: ItemFolderBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(data : Folder) {
+            binding.tvNameFolder.text = data.name
+            binding.lnItemFolder.setOnClickListener {
+                onItemClick.invoke(data)
+            }
+        }
+    }
+}

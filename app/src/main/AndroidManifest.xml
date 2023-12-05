@@ -24,6 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.AddFolderActivity"/>
+        <activity android:name=".activity.FolderDetailActivity"/>
+        <activity android:name=".activity.WordTopicActivity"/>
         <activity
             android:name=".activity.MainActivity"
             android:exported="true"
