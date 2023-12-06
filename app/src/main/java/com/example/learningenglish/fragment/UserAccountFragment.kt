@@ -82,8 +82,8 @@ class UserAccountFragment: BaseFragment<FragmentUserAccountBinding>() {
             binding.apply {
                 val firstName=edFirstName.text.toString().trim()
                 val lastName=edLastName.text.toString().trim()
-                val email=edEmail.text.toString().trim()
-                val user= User(firstName, lastName, email)
+                val dateOfBirth=edDateOfBirth.text.toString().trim()
+                val user= User(firstName, lastName, dateOfBirth)
                 viewModel.updateUser(user, imageUri)
             }
         }
@@ -100,7 +100,7 @@ class UserAccountFragment: BaseFragment<FragmentUserAccountBinding>() {
             Glide.with(this@UserAccountFragment).load(data.imagePath).error(ColorDrawable(Color.BLACK)).into(imageUser)
             edFirstName.setText(data.firstName)
             edLastName.setText(data.lastName)
-            edEmail.setText(data.email)
+            edDateOfBirth.setText(data.email)
 
         }
     }
