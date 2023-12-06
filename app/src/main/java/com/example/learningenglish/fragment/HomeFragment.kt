@@ -1,8 +1,10 @@
 package com.example.learningenglish.fragment
 
+import android.content.Intent
 import androidx.lifecycle.ViewModel
 import androidx.viewpager2.widget.ViewPager2
 import com.example.learningenglish.R
+import com.example.learningenglish.activity.PlayGameActivity
 import com.example.learningenglish.adapter.HomePagerAdapter
 import com.example.learningenglish.base.BaseFragment
 import com.example.learningenglish.databinding.FragmentHomeBinding
@@ -18,6 +20,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     override fun initViews() {
+        binding.fabGame.setOnClickListener {
+            startActivity(Intent(activity, PlayGameActivity::class.java))
+        }
         homePagerAdapter = HomePagerAdapter(requireActivity())
         binding.vpHomeGps.adapter = homePagerAdapter
         binding.vpHomeGps.registerOnPageChangeCallback(object :

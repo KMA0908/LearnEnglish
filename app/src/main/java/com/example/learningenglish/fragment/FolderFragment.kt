@@ -33,6 +33,11 @@ class FolderFragment : BaseFragment<FragmentFolderBinding>() {
        }
     }
 
+    override fun onResume() {
+        super.onResume()
+        val listFolder = sqlHelper.getAllFolder()
+        folderAdapter.setListFolder(listFolder)
+    }
     private fun openAddFolderAct() {
         startActivity(Intent(activity,AddFolderActivity::class.java ))
     }

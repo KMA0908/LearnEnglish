@@ -23,13 +23,18 @@ class TopicAdapter(
         holder.bind(topic)
     }
 
+    fun setListTopic(listTopic: List<Topic>) {
+        this.topicList = listTopic
+        notifyDataSetChanged()
+    }
+
     inner class TopicViewHolder(private val binding: ItemTopicBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data : Topic) {
             binding.tvNameTopic.text = data.name
             binding.tvTotalWord.text = data.total.toString()
             when(data.mode) {
-                0 -> binding.tvModeTopic.text = "Public"
-                1 -> binding.tvModeTopic.text = "Private"
+                0 -> binding.tvModeTopic.text = "Private"
+                1 -> binding.tvModeTopic.text = "Public"
             }
             binding.lnItemTopic.setOnClickListener {
                 onItemClick.invoke(data)

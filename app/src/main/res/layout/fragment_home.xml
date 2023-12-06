@@ -14,6 +14,17 @@
             android:layout_alignParentTop="true" />
 
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/layout_bottom_bar"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/d_16"
+            android:layout_marginBottom="6dp"
+            android:background="@color/main_background"
+            android:src="@drawable/ic_games" />
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/layout_bottom_bar"
             android:layout_width="match_parent"

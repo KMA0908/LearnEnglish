@@ -27,6 +27,9 @@
         <activity android:name=".activity.AddFolderActivity"/>
         <activity android:name=".activity.FolderDetailActivity"/>
         <activity android:name=".activity.WordTopicActivity"/>
+        <activity android:name=".activity.AddTopicActivity"/>
+        <activity android:name=".activity.AddWordTopicActivity"/>
+        <activity android:name=".activity.PlayGameActivity"/>
         <activity
             android:name=".activity.MainActivity"
             android:exported="true"

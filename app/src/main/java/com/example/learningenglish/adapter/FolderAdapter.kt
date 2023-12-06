@@ -23,6 +23,11 @@ class FolderAdapter(
         holder.bind(folder)
     }
 
+    fun setListFolder(listFolder: List<Folder>) {
+        this.folderList = listFolder
+        notifyDataSetChanged()
+    }
+
     inner class FolderViewHolder(private val binding: ItemFolderBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data : Folder) {
             binding.tvNameFolder.text = data.name

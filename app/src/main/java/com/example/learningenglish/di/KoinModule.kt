@@ -7,6 +7,7 @@ import com.example.learningenglish.viewmodel.FolderViewModel
 import com.example.learningenglish.viewmodel.LoginViewModel
 import com.example.learningenglish.viewmodel.MainViewModel
 import com.example.learningenglish.viewmodel.SplashViewModel
+import com.example.learningenglish.viewmodel.TopicViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -17,5 +18,6 @@ val KoinModule = module {
         viewModel { SplashViewModel() }
         viewModel { LoginViewModel() }
         viewModel { FolderViewModel() }
+        viewModel{ TopicViewModel()}
         single { SQLHelper(androidContext()) }
 }

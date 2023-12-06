@@ -23,10 +23,15 @@ class WordAdapter(
         holder.bind(word)
     }
 
+    fun setListWordTopic(listWordTopic: List<Word>) {
+        this.wordList = listWordTopic
+        notifyDataSetChanged()
+    }
+
     inner class WordViewHolder(private val binding: ItemWordBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(word : Word) {
             binding.tvNameWord.text = word.name
-            binding.tvState.text = word.learState
+            binding.tvState.text = word.learState.toString()
             binding.lnItemWord.setOnClickListener {
                 onItemClick.invoke(word)
             }
