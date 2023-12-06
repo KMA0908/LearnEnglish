@@ -7,6 +7,8 @@ import com.example.learningenglish.viewmodel.FolderViewModel
 import com.example.learningenglish.viewmodel.LoginViewModel
 import com.example.learningenglish.viewmodel.MainViewModel
 import com.example.learningenglish.viewmodel.SplashViewModel
+import com.example.learningenglish.database.AppDatabase
+import com.example.learningenglish.viewmodel.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -14,8 +16,12 @@ import org.koin.dsl.module
 val KoinModule = module {
         factory { androidContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager }
         viewModel { MainViewModel() }
+        viewModel { HomeViewModel() }
         viewModel { SplashViewModel() }
         viewModel { LoginViewModel() }
         viewModel { FolderViewModel() }
         single { SQLHelper(androidContext()) }
+        viewModel { ProfileViewModel() }
+        viewModel { UserAccountViewModel() }
+
 }

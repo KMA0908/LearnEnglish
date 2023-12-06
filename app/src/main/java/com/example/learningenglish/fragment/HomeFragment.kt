@@ -6,18 +6,21 @@ import com.example.learningenglish.R
 import com.example.learningenglish.adapter.HomePagerAdapter
 import com.example.learningenglish.base.BaseFragment
 import com.example.learningenglish.databinding.FragmentHomeBinding
+import com.example.learningenglish.viewmodel.HomeViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private lateinit var homePagerAdapter: HomePagerAdapter
+    private val viewModel: HomeViewModel by sharedViewModel()
+
     companion object {
         internal val TAG = HomeFragment::class.java.name
     }
 
-    override fun getVM(): ViewModel {
-        TODO("Not yet implemented")
-    }
+    override fun getVM(): ViewModel = viewModel
 
     override fun initViews() {
+        val layoutBottomBar = binding.layoutBottomBar
         homePagerAdapter = HomePagerAdapter(requireActivity())
         binding.vpHomeGps.adapter = homePagerAdapter
         binding.vpHomeGps.registerOnPageChangeCallback(object :
