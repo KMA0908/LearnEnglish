@@ -7,7 +7,6 @@ import com.example.learningenglish.viewmodel.FolderViewModel
 import com.example.learningenglish.viewmodel.LoginViewModel
 import com.example.learningenglish.viewmodel.MainViewModel
 import com.example.learningenglish.viewmodel.SplashViewModel
-import com.example.learningenglish.database.AppDatabase
 import com.example.learningenglish.viewmodel.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel

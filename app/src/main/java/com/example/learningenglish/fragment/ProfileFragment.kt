@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.learningenglish.R
 import com.example.learningenglish.activity.LoginActivity
+import com.example.learningenglish.activity.UserAccountActivity
 import com.example.learningenglish.base.BaseFragment
 import com.example.learningenglish.callback.OnActionCallBack
 import com.example.learningenglish.databinding.FragmentProfileBinding
@@ -31,13 +32,8 @@ class ProfileFragment: BaseFragment<FragmentProfileBinding>() {
     override fun initViews() {
 
         binding.linearEditProfile.setOnClickListener {
-            val transAnim = FragmentTransactionAnim().apply {
-                this.enter = R.anim.in_screen_right_to_left
-                this.exit = R.anim.out_screen_right_to_left
-                this.popEnter = R.anim.in_screen_left_to_right
-                this.popExit = R.anim.out_screen_left_to_right
-            }
-            callBack?.showFrg(TAG, null, UserAccountFragment.TAG, true, transAnim)
+            val intent = Intent(requireActivity(), UserAccountActivity::class.java)
+            startActivity(intent)
         }
 
 

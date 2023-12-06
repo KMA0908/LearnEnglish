@@ -20,16 +20,7 @@
                         android:layout_height="match_parent">
 
 
-                        <ImageView
-                            android:id="@+id/imageClose_user_account"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/ic_close"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:tint="@color/black" />
+
 
 
                         <TextView
@@ -40,9 +31,8 @@
                             android:textColor="@color/black"
                             android:textSize="30sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@id/imageClose_user_account"
-                            app:layout_constraintStart_toStartOf="@id/imageClose_user_account"
-                            app:layout_constraintTop_toTopOf="@id/imageClose_user_account"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintVertical_bias="0.45" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -105,14 +95,13 @@
                     app:layout_constraintTop_toBottomOf="@id/ed_first_name" />
 
                 <EditText
-                    android:id="@+id/ed_email"
+                    android:id="@+id/ed_date_of_birth"
                     android:layout_width="0dp"
                     android:layout_height="45dp"
                     android:layout_marginTop="10dp"
                     android:background="#F5F8FA"
-                    android:editable="false"
                     android:gravity="center"
-                    android:hint="Email"
+                    android:hint="Date of birth"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:singleLine="true"
@@ -134,7 +123,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/rightGuideline"
                     app:layout_constraintStart_toStartOf="@id/leftGuideline"
-                    app:layout_constraintTop_toBottomOf="@+id/ed_email"
+                    app:layout_constraintTop_toBottomOf="@+id/ed_date_of_birth"
                     android:layout_marginBottom="20dp"/>
 
                 <androidx.constraintlayout.widget.Guideline

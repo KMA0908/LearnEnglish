@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.AddFolderActivity"/>
+        <activity android:name=".activity.UserAccountActivity"/>
         <activity android:name=".activity.FolderDetailActivity"/>
         <activity android:name=".activity.WordTopicActivity"/>
         <activity
