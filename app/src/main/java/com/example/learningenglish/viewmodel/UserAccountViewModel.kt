@@ -60,7 +60,7 @@ class UserAccountViewModel : BaseViewModel()  {
     }
 
     fun updateUser(user: User, imageUri: Uri?) {
-        val areInputsvalid = user.email.trim().isNotEmpty()
+        val areInputsvalid = user.dateOfBirth.trim().isNotEmpty()
                 && user.firstName.trim().isNotEmpty()
                 && user.lastName.trim().isNotEmpty()
 

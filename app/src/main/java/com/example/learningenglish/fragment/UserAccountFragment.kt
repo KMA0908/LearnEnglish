@@ -100,7 +100,7 @@ class UserAccountFragment: BaseFragment<FragmentUserAccountBinding>() {
             Glide.with(this@UserAccountFragment).load(data.imagePath).error(ColorDrawable(Color.BLACK)).into(imageUser)
             edFirstName.setText(data.firstName)
             edLastName.setText(data.lastName)
-            edDateOfBirth.setText(data.email)
+            edDateOfBirth.setText(data.dateOfBirth)
 
         }
     }
