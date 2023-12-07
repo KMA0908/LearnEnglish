@@ -33,6 +33,7 @@
         <activity android:name=".activity.FlashCardActivity"/>
         <activity android:name=".activity.MultipleChoiceActivity"/>
         <activity android:name=".activity.FillInWordActivity"/>
+        <activity android:name=".activity.EditProfileActivity"/>
         <activity
             android:name=".activity.MainActivity"
             android:exported="true"

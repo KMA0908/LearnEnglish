@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_marginTop="@dimen/d_56"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:text="Chỉnh sửa thông tin cá nhân"
+            android:textColor="@color/main_color"
+            android:textSize="@dimen/text_18"
+            android:fontFamily="sans-serif-medium" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginTop="@dimen/d_16"
+            android:id="@+id/iv_profile"
+            android:layout_gravity="center"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:src="@drawable/ic_profile" />
+        <TableRow
+            android:layout_marginHorizontal="@dimen/d_16"
+            android:layout_marginTop="@dimen/d_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="@dimen/d_8"
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:text="UserName : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16" />
+            <EditText
+                android:layout_marginStart="@dimen/d_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:text="UserName : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16" />
+
+        </TableRow>
+        <TableRow
+            android:layout_marginHorizontal="@dimen/d_16"
+            android:layout_marginTop="@dimen/d_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="@dimen/d_8"
+                android:id="@+id/tv_gmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:text="Email : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16" />
+            <EditText
+                android:layout_marginStart="@dimen/d_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:text="Email : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16" />
+
+        </TableRow>
+        <TableRow
+            android:layout_marginHorizontal="@dimen/d_16"
+            android:layout_marginTop="@dimen/d_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="@dimen/d_8"
+                android:id="@+id/tv_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:text="Password : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16" />
+            <EditText
+                android:layout_marginStart="@dimen/d_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:text="Password : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16" />
+
+        </TableRow>
+        <TextView
+            android:id="@+id/tv_done"
+            android:layout_marginTop="@dimen/d_16"
+            android:text="Done"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_btn_done"
+            android:textColor="@color/white"
+            android:paddingHorizontal="@dimen/d_20"
+            android:paddingVertical="@dimen/d_4"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/text_18"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</layout>
