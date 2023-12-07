@@ -121,11 +121,12 @@ class SQLHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, nu
         }
         return list
     }
-    fun addTopic(topic: Topic): Long {
+    fun addTopic(topic: Topic, id : Int): Long {
         val values = ContentValues()
         values.put("topic_name", topic.name)
         values.put("total", topic.total)
         values.put("mode", topic.mode)
+        values.put("folder_id", id)
         val sqLiteDatabase = writableDatabase
         return sqLiteDatabase.insert("topic", null, values)
     }

@@ -23,7 +23,7 @@ class FolderFragment : BaseFragment<FragmentFolderBinding>() {
         val listFolder = sqlHelper.getAllFolder()
         folderAdapter = FolderAdapter(listFolder) {
             val intent = Intent(activity, FolderDetailActivity::class.java)
-            intent.putExtra(FolderDetailActivity.FOLDER_ID, it)
+            intent.putExtra(FolderDetailActivity.FOLDER_ID, it.id)
             startActivity(intent)
         }
         binding.rcvFolder.adapter = folderAdapter

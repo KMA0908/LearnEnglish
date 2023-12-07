@@ -21,12 +21,14 @@ class FolderDetailActivity : BaseActivity<ActivityFolderDetailBinding, FolderVie
     }
 
     private lateinit var topicAdapter: TopicAdapter
+    private var folderId: Int = 0
     private val viewModel: FolderViewModel by viewModel()
 
     override fun getVM(): FolderViewModel = viewModel
 
     override fun initViews() {
-        val listTopic = sqlHelper.searchByTopicByFolderId(intent.getIntExtra(FOLDER_ID,0))
+        folderId = intent.getIntExtra(FOLDER_ID,0)
+        val listTopic = sqlHelper.searchByTopicByFolderId(folderId)
         listTopic.let {
             topicAdapter = TopicAdapter(it) { topic ->
                 val intent = Intent(this@FolderDetailActivity, WordTopicActivity::class.java)
@@ -38,6 +40,11 @@ class FolderDetailActivity : BaseActivity<ActivityFolderDetailBinding, FolderVie
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        val listTopic = sqlHelper.searchByTopicByFolderId(folderId)
 
+        topicAdapter.setListTopic(listTopic)
+    }
     override fun getLayoutId() = R.layout.activity_folder_detail
 }

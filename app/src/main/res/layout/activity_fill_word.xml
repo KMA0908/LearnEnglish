@@ -1,9 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
+        <TableRow
+            android:layout_marginTop="@dimen/d_16"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/d_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginTop="@dimen/d_12"
+                android:text="Từ vựng : "
+                android:textColor="@color/main_color"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/text_18"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_word"
+                android:layout_marginTop="@dimen/d_12"
+                android:text="ok"
+                android:textColor="@color/main_color"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/text_18"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="@dimen/d_16"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/d_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Điền nghĩa tiếng việt : "
+                android:textColor="@color/main_color"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/text_18"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/tv_word_mean"
+                android:hint="ok"
+                android:textColor="@color/main_color"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/text_18"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+        <TextView
+            android:id="@+id/tv_ok"
+            android:layout_marginTop="@dimen/d_16"
+            android:text="OK"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_btn_done"
+            android:textColor="@color/white"
+            android:paddingHorizontal="@dimen/d_20"
+            android:paddingVertical="@dimen/d_4"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/text_18"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 </layout>

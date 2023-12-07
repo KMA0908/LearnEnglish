@@ -1,11 +1,10 @@
 package com.example.learningenglish.activity
 
+import android.widget.ArrayAdapter
 import com.example.learningenglish.R
 import com.example.learningenglish.base.BaseActivity
 import com.example.learningenglish.database.SQLHelper
-import com.example.learningenglish.databinding.ActivityAddFolderBinding
 import com.example.learningenglish.databinding.ActivityAddTopicBinding
-import com.example.learningenglish.model.Folder
 import com.example.learningenglish.model.Topic
 import com.example.learningenglish.viewmodel.SplashViewModel
 import org.koin.android.ext.android.inject
@@ -29,9 +28,21 @@ class AddTopicActivity: BaseActivity<ActivityAddTopicBinding, SplashViewModel>()
             }
         }
         binding.tvDone.setOnClickListener {
-            sqlHelper.addTopic(Topic(binding.edtNameTopic.text.toString(),0, modeTopic))
+            sqlHelper.addTopic(Topic(binding.edtNameTopic.text.toString(),0, modeTopic)
+                , binding.spinnerFolder.selectedItem.toString().toInt())
             finish()
         }
+        val list: ArrayList<String> = ArrayList()
+        for (i in 0 until sqlHelper.getAllFolder().size) {
+            list.add(sqlHelper.getAllFolder()[i].id.toString())
+        }
+        val arr = list.toTypedArray()
+        val adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_item, arr
+        )
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinnerFolder.adapter = adapter
     }
 
     override fun getLayoutId() = R.layout.activity_add_topic
