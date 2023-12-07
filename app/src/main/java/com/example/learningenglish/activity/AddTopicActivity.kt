@@ -7,6 +7,10 @@ import com.example.learningenglish.database.SQLHelper
 import com.example.learningenglish.databinding.ActivityAddTopicBinding
 import com.example.learningenglish.model.Topic
 import com.example.learningenglish.viewmodel.SplashViewModel
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import io.reactivex.rxjava3.schedulers.Schedulers.single
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -14,9 +18,13 @@ class AddTopicActivity: BaseActivity<ActivityAddTopicBinding, SplashViewModel>()
     private val sqlHelper: SQLHelper by inject()
     companion object {
         internal val TAG = SplashActivity::class.java.name
+        internal val TOPIC_COLLECTION = "topic"
     }
     private val viewModel: SplashViewModel by viewModel()
     private var modeTopic = 0
+    private val firestore: FirebaseFirestore by inject()
+    private val firebaseAuth: FirebaseAuth by inject()
+
     override fun getVM(): SplashViewModel = viewModel
 
     override fun initViews() {
@@ -28,8 +36,21 @@ class AddTopicActivity: BaseActivity<ActivityAddTopicBinding, SplashViewModel>()
             }
         }
         binding.tvDone.setOnClickListener {
-            sqlHelper.addTopic(Topic(binding.edtNameTopic.text.toString(),0, modeTopic)
-                , binding.spinnerFolder.selectedItem.toString().toInt())
+            val topic = Topic(binding.edtNameTopic.text.toString(),0, modeTopic)
+            sqlHelper.addTopic(topic, binding.spinnerFolder.selectedItem.toString().toInt())
+            // Topic la public thi day len firebase
+            if (topic.mode == 1) {
+                val data = hashMapOf(
+                    "name" to topic.name,
+                    "total" to topic.total,
+                    "id" to topic.id,
+                    "userId" to firebaseAuth.uid
+                )
+                firestore.collection(TOPIC_COLLECTION).add(data).addOnCompleteListener {
+                    //
+
+                }
+            }
             finish()
         }
         val list: ArrayList<String> = ArrayList()
