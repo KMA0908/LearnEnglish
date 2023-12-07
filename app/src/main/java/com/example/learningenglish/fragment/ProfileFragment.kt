@@ -47,7 +47,8 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
                             .error(ColorDrawable(Color.BLACK))
                             .into(binding.ivProfile)
                         binding.tvName.text = "${it.data.userName} "
-                        binding.tvGmail.text = "${it.data.email} "
+                        binding.edAddress.text = "${it.data.address} "
+                        binding.edBirth.text = "${it.data.birth} "
 
                     }
                     is Resource.Error -> {

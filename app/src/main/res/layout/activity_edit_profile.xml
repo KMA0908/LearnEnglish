@@ -69,20 +69,20 @@
             android:layout_height="wrap_content">
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_marginStart="@dimen/d_8"
-                android:id="@+id/tv_gmail"
+                android:id="@+id/tv_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
-                android:text="Email : "
+                android:text="Address : "
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_16" />
             <EditText
-                android:id="@+id/ed_email"
+                android:id="@+id/ed_address"
                 android:layout_marginStart="@dimen/d_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
-                android:hint="Email"
+                android:hint="Address"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_16" />
 
@@ -94,20 +94,20 @@
             android:layout_height="wrap_content">
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_marginStart="@dimen/d_8"
-                android:id="@+id/tv_password"
+                android:id="@+id/tv_birth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
-                android:text="Password : "
+                android:text="Date of birth : "
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_16" />
             <EditText
-                android:id="@+id/ed_password"
+                android:id="@+id/ed_birth"
                 android:layout_marginStart="@dimen/d_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
-                android:hint="Password"
+                android:hint="Date of birth"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_16" />
 

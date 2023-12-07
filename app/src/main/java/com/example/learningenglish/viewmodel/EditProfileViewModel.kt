@@ -60,8 +60,8 @@ class EditProfileViewModel : BaseViewModel()  {
 
     fun updateUser(user: User, imageUri: Uri?) {
         val areInputsvalid = user.userName.trim().isNotEmpty()
-                && user.email.trim().isNotEmpty()
-                && user.passWord.trim().isNotEmpty()
+                && user.address.trim().isNotEmpty()
+                && user.birth.trim().isNotEmpty()
 
         if (!areInputsvalid) {
             viewModelScope.launch {
