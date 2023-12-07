@@ -17,7 +17,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val KoinModule = module {
-        single { AppDatabase.invoke(androidContext()) }
+
         factory { androidContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager }
         viewModel { MainViewModel() }
         viewModel { HomeViewModel() }
