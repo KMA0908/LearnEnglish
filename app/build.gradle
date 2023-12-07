@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
-    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -75,9 +74,6 @@ dependencies {
     //loading button
     implementation 'br.com.simplepass:loading-button-android:2.2.0'
 
-    //Dagger hilt
-    implementation 'com.google.dagger:hilt-android:2.44'
-    kapt "com.google.dagger:hilt-compiler:2.44"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
 
     //Glide
