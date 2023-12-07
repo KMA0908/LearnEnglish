@@ -78,9 +78,9 @@ class EditProfileActivity : BaseActivity<ActivityEditProfileBinding, EditProfile
         binding.tvDone.setOnClickListener {
             binding.apply {
                 val userName=edUserName.text.toString().trim()
-                val email=edEmail.text.toString().trim()
-                val password=edPassword.text.toString().trim()
-                val user= User(userName, email, password)
+                val address=edAddress.text.toString().trim()
+                val birth=edBirth.text.toString().trim()
+                val user= User(userName, address, birth)
                 viewModel.updateUser(user, imageUri)
             }
         }
@@ -96,8 +96,8 @@ class EditProfileActivity : BaseActivity<ActivityEditProfileBinding, EditProfile
         binding.apply {
             Glide.with(this@EditProfileActivity).load(data.imagePath).error(ColorDrawable(Color.BLACK)).into(ivProfile)
             edUserName.setText(data.userName)
-            edEmail.setText(data.email)
-            edPassword.setText(data.passWord)
+            edAddress.setText(data.address)
+            edBirth.setText(data.birth)
 
         }
     }

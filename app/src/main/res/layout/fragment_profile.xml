@@ -34,20 +34,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_gmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
-                android:text="Email : "
+                android:text="Address : "
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_16" />
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_marginStart="@dimen/d_8"
-                android:id="@+id/edit_gmail"
+                android:id="@+id/ed_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
-                android:text="Email"
+                android:text="Address"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16" />
+        </TableRow>
+        <TableRow
+            android:layout_marginStart="@dimen/d_16"
+            android:layout_marginTop="@dimen/d_16"
+            android:layout_marginEnd="@dimen/d_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:text="Date of birth : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="@dimen/d_8"
+                android:id="@+id/ed_birth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:text="Date of birth"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_16" />
         </TableRow>
@@ -62,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
-                android:text="Chỉnh sửa profile"
+                android:text="Edit profile"
                 android:textColor="@color/black"
                 android:layout_marginEnd="@dimen/d_16"
                 android:textSize="@dimen/text_16" />
