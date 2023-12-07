@@ -30,6 +30,9 @@
         <activity android:name=".activity.AddTopicActivity"/>
         <activity android:name=".activity.AddWordTopicActivity"/>
         <activity android:name=".activity.PlayGameActivity"/>
+        <activity android:name=".activity.FlashCardActivity"/>
+        <activity android:name=".activity.MultipleChoiceActivity"/>
+        <activity android:name=".activity.FillInWordActivity"/>
         <activity
             android:name=".activity.MainActivity"
             android:exported="true"
