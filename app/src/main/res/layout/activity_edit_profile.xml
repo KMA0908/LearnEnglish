@@ -27,6 +27,16 @@
             android:layout_width="86dp"
             android:layout_height="86dp"
             android:src="@drawable/ic_profile" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_edit"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:backgroundTint="#5E85F9"
+            android:src="@drawable/ic_edit"
+            android:layout_gravity="center"
+             />
+
         <TableRow
             android:layout_marginHorizontal="@dimen/d_16"
             android:layout_marginTop="@dimen/d_16"
@@ -42,11 +52,12 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_16" />
             <EditText
+                android:id="@+id/ed_user_name"
                 android:layout_marginStart="@dimen/d_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
-                android:text="UserName : "
+                android:hint="UserName"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_16" />
 
@@ -66,11 +77,12 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_16" />
             <EditText
+                android:id="@+id/ed_email"
                 android:layout_marginStart="@dimen/d_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
-                android:text="Email : "
+                android:hint="Email"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_16" />
 
@@ -90,11 +102,12 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_16" />
             <EditText
+                android:id="@+id/ed_password"
                 android:layout_marginStart="@dimen/d_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
-                android:text="Password : "
+                android:hint="Password"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_16" />
 

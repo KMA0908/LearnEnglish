@@ -3,11 +3,7 @@ package com.example.learningenglish.di
 import android.content.Context
 import android.location.LocationManager
 import com.example.learningenglish.database.SQLHelper
-import com.example.learningenglish.viewmodel.FolderViewModel
-import com.example.learningenglish.viewmodel.LoginViewModel
-import com.example.learningenglish.viewmodel.MainViewModel
-import com.example.learningenglish.viewmodel.SplashViewModel
-import com.example.learningenglish.viewmodel.TopicViewModel
+import com.example.learningenglish.viewmodel.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -23,6 +19,8 @@ val KoinModule = module {
         viewModel { LoginViewModel() }
         viewModel { FolderViewModel() }
         viewModel{ TopicViewModel()}
+        viewModel { ProfileViewModel() }
+        viewModel { EditProfileViewModel() }
         single { SQLHelper(androidContext()) }
         single { FirebaseAuth.getInstance() }
         single { Firebase.firestore }
