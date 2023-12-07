@@ -2,7 +2,7 @@ package com.example.learningenglish.viewmodel
 
 import androidx.lifecycle.viewModelScope
 import com.example.learningenglish.base.BaseViewModel
-import com.example.learningenglish.database.User
+import com.example.learningenglish.model.User
 import com.example.learningenglish.utils.Resource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore

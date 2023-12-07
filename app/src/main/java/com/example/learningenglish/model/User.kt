@@ -1,4 +1,4 @@
-package com.example.learningenglish.database
+package com.example.learningenglish.model
 
 data class User(
     val firstName: String,

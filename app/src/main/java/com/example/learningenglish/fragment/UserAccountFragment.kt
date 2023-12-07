@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -13,7 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.learningenglish.R
 import com.example.learningenglish.base.BaseFragment
-import com.example.learningenglish.database.User
+import com.example.learningenglish.model.User
 import com.example.learningenglish.databinding.FragmentUserAccountBinding
 import com.example.learningenglish.utils.Resource
 import com.example.learningenglish.viewmodel.UserAccountViewModel
