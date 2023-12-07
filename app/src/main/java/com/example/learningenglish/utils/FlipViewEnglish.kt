@@ -10,7 +10,7 @@ import android.view.View
 
 class FlipViewEnglish(context: Context?, attrs: AttributeSet?) :
     View(context, attrs) {
-    private val frontText = "Front"
+    private val frontText = "Card English"
     private val backText = "Back"
     private var isFlipped = false
     private val paintText: Paint = Paint()
@@ -20,7 +20,7 @@ class FlipViewEnglish(context: Context?, attrs: AttributeSet?) :
         paintText.color = Color.BLACK
         paintText.textSize = 50f
         paintBackground = Paint()
-        paintBackground.color = Color.CYAN
+        paintBackground.color = Color.GREEN
     }
 
     override fun onDraw(canvas: Canvas) {

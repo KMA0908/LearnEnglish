@@ -3,36 +3,41 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
         android:orientation="vertical"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <!-- Các FlipTextView -->
         <com.example.learningenglish.utils.FlipViewEnglish
             android:id="@+id/flipTextView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="240dp"
+            android:background="@color/gray"
+            android:layout_height="120dp"
             android:layout_margin="16dp"
-            android:text="Front1" />
+            android:text="Card English" />
 
         <com.example.learningenglish.utils.FlipViewEnglish
             android:id="@+id/flipTextView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="240dp"
+            android:background="@color/gray"
+            android:layout_height="120dp"
             android:layout_margin="16dp"
-            android:text="Front2" />
+            android:text="Card English" />
 
         <com.example.learningenglish.utils.FlipViewEnglish
             android:id="@+id/flipTextView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="240dp"
+            android:layout_height="120dp"
+            android:background="@color/gray"
             android:layout_margin="16dp"
-            android:text="Front3" />
+            android:text="Card English" />
 
         <com.example.learningenglish.utils.FlipViewEnglish
             android:id="@+id/flipTextView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="240dp"
+            android:background="@color/gray"
+            android:layout_height="120dp"
             android:layout_margin="16dp"
-            android:text="Front4" />
+            android:text="Card English"/>
 
 
     </LinearLayout>

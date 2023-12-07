@@ -13,6 +13,7 @@ import com.example.learningenglish.databinding.FragmentProfileBinding
 import com.example.learningenglish.share.FragmentTransactionAnim
 import com.example.learningenglish.utils.Resource
 import com.example.learningenglish.viewmodel.ProfileViewModel
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.flow.collectLatest
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -37,7 +38,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
         binding.tbEditUser.setOnClickListener {
             startActivity(Intent(activity, EditProfileActivity::class.java))
         }
-
+        binding.tvName.text = FirebaseAuth.getInstance().currentUser?.email.toString()
         lifecycleScope.launchWhenStarted {
             viewModel.user.collectLatest {
                 when (it) {
