@@ -11,7 +11,7 @@ import android.view.View
 class FlipViewEnglish(context: Context?, attrs: AttributeSet?) :
     View(context, attrs) {
     private val frontText = "Card English"
-    private val backText = "Back"
+    var backText = "Back"
     private var isFlipped = false
     private val paintText: Paint = Paint()
     private val paintBackground: Paint
@@ -57,7 +57,7 @@ class FlipViewEnglish(context: Context?, attrs: AttributeSet?) :
         invalidate()
     }
      fun getTextBackData(text: String) {
-     //   this.backText = text
+        this.backText = text
     }
     override fun performClick(): Boolean {
         flip()

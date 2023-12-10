@@ -47,10 +47,12 @@ class FlashCardActivity : BaseActivity<ActivityFlashCardBinding, MainViewModel>(
             selectedText = listWord[index].meaning.toString()
             binding.flipTextView1.getTextBackData(selectedText)
             binding.flipTextView1.flip()
+            binding.flipTextView1.flip()
         }
         binding.flipTextView2.setOnClickListener {
             selectedText = listWord[index].id.toString()
             binding.flipTextView1.getTextBackData(selectedText)
+            binding.flipTextView2.flip()
             binding.flipTextView2.flip()
         }
 
@@ -58,11 +60,13 @@ class FlashCardActivity : BaseActivity<ActivityFlashCardBinding, MainViewModel>(
             selectedText = listWord[index].learState.toString()
             binding.flipTextView1.getTextBackData(selectedText)
             binding.flipTextView3.flip()
+            binding.flipTextView3.flip()
         }
 
         binding.flipTextView4.setOnClickListener {
-            selectedText = listWord[index].name.toString()
+            selectedText = listWord[index].name
             binding.flipTextView1.getTextBackData(selectedText)
+            binding.flipTextView4.flip()
             binding.flipTextView4.flip()
         }
 
