@@ -7,38 +7,69 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <!-- Các FlipTextView -->
+        <TableRow
+            android:layout_marginTop="@dimen/d_16"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/d_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Nghĩa của từ vựng : "
+                android:textColor="@color/main_color"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/text_18"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_word"
+                android:text="ok"
+                android:textColor="@color/main_color"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/text_18"
+                android:layout_height="wrap_content"/>
+        </TableRow>
         <com.example.learningenglish.utils.FlipViewEnglish
             android:id="@+id/flipTextView1"
-            android:layout_width="240dp"
+            android:layout_width="260dp"
             android:background="@color/gray"
-            android:layout_height="120dp"
+            android:layout_height="110dp"
             android:layout_margin="16dp"
             android:text="Card English" />
 
         <com.example.learningenglish.utils.FlipViewEnglish
             android:id="@+id/flipTextView2"
-            android:layout_width="240dp"
+            android:layout_width="260dp"
             android:background="@color/gray"
-            android:layout_height="120dp"
+            android:layout_height="110dp"
             android:layout_margin="16dp"
             android:text="Card English" />
 
         <com.example.learningenglish.utils.FlipViewEnglish
             android:id="@+id/flipTextView3"
-            android:layout_width="240dp"
-            android:layout_height="120dp"
+            android:layout_width="260dp"
+            android:layout_height="110dp"
             android:background="@color/gray"
             android:layout_margin="16dp"
             android:text="Card English" />
 
         <com.example.learningenglish.utils.FlipViewEnglish
             android:id="@+id/flipTextView4"
-            android:layout_width="240dp"
+            android:layout_width="260dp"
             android:background="@color/gray"
-            android:layout_height="120dp"
+            android:layout_height="110dp"
             android:layout_margin="16dp"
             android:text="Card English"/>
 
-
+        <TextView
+            android:id="@+id/tv_ok"
+            android:layout_marginTop="@dimen/d_16"
+            android:text="OK"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_btn_done"
+            android:textColor="@color/white"
+            android:paddingHorizontal="@dimen/d_20"
+            android:paddingVertical="@dimen/d_4"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/text_18"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 </layout>

@@ -25,9 +25,12 @@ class FillInWordActivity : BaseActivity<ActivityFillWordBinding, MainViewModel>(
         listWord = sqlHelper.getAllWordTopic()
         binding.tvWord.text = listWord[index].name
         binding.tvOk.setOnClickListener {
-            if (listWord[index].name.equals(binding.tvWordMean.text.toString()))
-                Toast.makeText(this@FillInWordActivity, "Chính xác", Toast.LENGTH_SHORT)
-            else Toast.makeText(this@FillInWordActivity, "Chưa chính xác", Toast.LENGTH_SHORT)
+            if (listWord[index].name.equals(binding.tvWordMean.text.toString())) {
+                val stateWord = listWord[index].learState++
+                sqlHelper.updateWord(Word(listWord[index].id,listWord[index].name,listWord[index].meaning, stateWord))
+                Toast.makeText(this@FillInWordActivity, "Chính xác", Toast.LENGTH_SHORT).show()
+            }
+            else Toast.makeText(this@FillInWordActivity, "Chưa chính xác", Toast.LENGTH_SHORT).show()
             index++
             reloadData()
         }

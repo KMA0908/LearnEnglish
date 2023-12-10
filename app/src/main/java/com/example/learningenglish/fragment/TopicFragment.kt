@@ -25,6 +25,7 @@ class TopicFragment : BaseFragment<FragmentTopicBinding>() {
             topicAdapter = TopicAdapter(it) { topic ->
                 val intent = Intent(activity, WordTopicActivity::class.java)
                 intent.putExtra(WordTopicActivity.TOPIC_WORD, topic.id)
+                intent.putExtra(WordTopicActivity.TOPIC_DATA, topic)
                 startActivity(intent)
             }
             binding.rcvTopic.adapter = topicAdapter

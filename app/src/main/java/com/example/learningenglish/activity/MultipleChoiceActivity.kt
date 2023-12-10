@@ -29,18 +29,30 @@ class MultipleChoiceActivity : BaseActivity<ActivityMultipleChoiceBinding, MainV
         binding.tvWordC.text = listWord[index].name
         binding.tvWordD.text = listWord[index].learState.toString()
         binding.tvWordA.setOnClickListener {
+            val stateWord = listWord[index].learState++
+            sqlHelper.updateWord(Word(listWord[index].id,listWord[index].name,listWord[index].meaning, stateWord))
+            Toast.makeText(this@MultipleChoiceActivity, "Chính xác", Toast.LENGTH_SHORT).show()
             index++
             reloadData()
         }
         binding.tvWordB.setOnClickListener {
+            val stateWord = listWord[index].learState++
+            sqlHelper.updateWord(Word(listWord[index].id,listWord[index].name,listWord[index].meaning, stateWord))
+            Toast.makeText(this@MultipleChoiceActivity, "Chưa chính xác", Toast.LENGTH_SHORT).show()
             index++
             reloadData()
         }
         binding.tvWordC.setOnClickListener {
+            val stateWord = listWord[index].learState++
+            sqlHelper.updateWord(Word(listWord[index].id,listWord[index].name,listWord[index].meaning, stateWord))
+            Toast.makeText(this@MultipleChoiceActivity, "Chưa chính xác", Toast.LENGTH_SHORT).show()
             index++
             reloadData()
         }
         binding.tvWordD.setOnClickListener {
+            val stateWord = listWord[index].learState++
+            sqlHelper.updateWord(Word(listWord[index].id,listWord[index].name,listWord[index].meaning, stateWord))
+            Toast.makeText(this@MultipleChoiceActivity, "Chưa chính xác", Toast.LENGTH_SHORT).show()
             index++
             reloadData()
         }
@@ -48,7 +60,7 @@ class MultipleChoiceActivity : BaseActivity<ActivityMultipleChoiceBinding, MainV
 
     private fun reloadData() {
         if (index >= listWord.size) {
-            Toast.makeText(this@MultipleChoiceActivity,"Đã hết từ vựng", Toast.LENGTH_SHORT)
+            Toast.makeText(this@MultipleChoiceActivity,"Đã hết từ vựng", Toast.LENGTH_SHORT).show()
         } else {
             binding.tvWord.text = listWord[index].name
             binding.tvWordA.text = listWord[index].meaning

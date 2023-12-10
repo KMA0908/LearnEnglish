@@ -4,8 +4,8 @@ import java.io.Serializable
 
 class Word : Serializable {
     var id = 0
-    var name: String? = null
-    var meaning: String? = null
+    var name: String = ""
+    var meaning: String = ""
     var learState : Int = 0
     // Constructor chính
     constructor(id: Int, name: String,meaning : String,learState : Int) {

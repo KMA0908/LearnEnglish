@@ -81,6 +81,43 @@ class SQLHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, nu
         val sqLiteDatabase = writableDatabase
         return sqLiteDatabase.insert("word", null, values)
     }
+
+    //    public List<SinhVien> getByDate (String date) {
+    //        List<SinhVien> list = new ArrayList<>();
+    //        String whereClause = "date like ?";
+    //        String[] whereArgs = {date};
+    //        SQLiteDatabase st = getReadableDatabase();
+    //        Cursor rs = st.query("congviecs",null,whereClause,whereArgs,null,null,null);
+    //        while (rs != null && rs.moveToNext()) {
+    //            int id = rs.getInt(0);
+    //            String ten = rs.getString(1);
+    //            String noiDung = rs.getString(2);
+    //            String tinhTrang = rs.getString(4);
+    //            String congTac = rs.getString(5);
+    //            list.add(new SinhVien(id,ten,noiDung,date,tinhTrang,congTac));
+    //        }
+    //        return list;
+    //    }
+    fun updateTopic(topic: Topic): Int {
+        val values = ContentValues()
+        values.put("topic_name", topic.name)
+        values.put("total", topic.total)
+        values.put("mode", topic.mode)
+        val sqLiteDatabase = writableDatabase
+        val whereClause = "topic_id= ?"
+        val whereArgs = arrayOf(Integer.toString(topic.id))
+        return sqLiteDatabase.update("topic", values, whereClause, whereArgs)
+    }
+    fun updateWord(word: Word): Int {
+        val values = ContentValues()
+        values.put("word_name", word.name)
+        values.put("meaning", word.meaning)
+        values.put("state", word.learState)
+        val sqLiteDatabase = writableDatabase
+        val whereClause = "word_id= ?"
+        val whereArgs = arrayOf(Integer.toString(word.id))
+        return sqLiteDatabase.update("word", values, whereClause, whereArgs)
+    }
     fun addFolder(folder: Folder): Long {
         val values = ContentValues()
         values.put("folder_name", folder.name)

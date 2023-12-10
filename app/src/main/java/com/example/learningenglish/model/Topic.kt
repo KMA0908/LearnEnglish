@@ -3,7 +3,7 @@ package com.example.learningenglish.model
 import java.io.Serializable
 class Topic : Serializable {
     var id = 0
-    var name: String? = null
+    var name: String = ""
     var total: Int = 0
     var mode : Int = 0
     // Constructor chính

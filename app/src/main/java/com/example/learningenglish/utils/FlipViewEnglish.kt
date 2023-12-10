@@ -56,7 +56,9 @@ class FlipViewEnglish(context: Context?, attrs: AttributeSet?) :
         isFlipped = !isFlipped
         invalidate()
     }
-
+     fun getTextBackData(text: String) {
+     //   this.backText = text
+    }
     override fun performClick(): Boolean {
         flip()
         return super.performClick()
