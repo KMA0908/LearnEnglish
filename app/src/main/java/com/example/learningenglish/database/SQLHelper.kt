@@ -105,7 +105,7 @@ class SQLHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, nu
         values.put("mode", topic.mode)
         val sqLiteDatabase = writableDatabase
         val whereClause = "topic_id= ?"
-        val whereArgs = arrayOf(Integer.toString(topic.id))
+        val whereArgs = arrayOf(topic.id.toString())
         return sqLiteDatabase.update("topic", values, whereClause, whereArgs)
     }
     fun updateWord(word: Word): Int {
@@ -115,7 +115,7 @@ class SQLHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, nu
         values.put("state", word.learState)
         val sqLiteDatabase = writableDatabase
         val whereClause = "word_id= ?"
-        val whereArgs = arrayOf(Integer.toString(word.id))
+        val whereArgs = arrayOf(word.id.toString())
         return sqLiteDatabase.update("word", values, whereClause, whereArgs)
     }
     fun addFolder(folder: Folder): Long {
@@ -210,5 +210,17 @@ class SQLHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, nu
             list.add(Topic(id, name,total,mode))
         }
         return list
+    }
+    fun deleteTopic(id: Int): Int {
+        val whereClause = "topic_id= ?"
+        val whereArgs = arrayOf(Integer.toString(id))
+        val sqLiteDatabase = writableDatabase
+        return sqLiteDatabase.delete("topic", whereClause, whereArgs)
+    }
+    fun deleteFolder(id: Int): Int {
+        val whereClause = "folder_id= ?"
+        val whereArgs = arrayOf(Integer.toString(id))
+        val sqLiteDatabase = writableDatabase
+        return sqLiteDatabase.delete("folder", whereClause, whereArgs)
     }
 }

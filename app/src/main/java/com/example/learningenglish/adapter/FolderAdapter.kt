@@ -8,7 +8,8 @@ import com.example.learningenglish.model.Folder
 
 class FolderAdapter(
     private var folderList: List<Folder>,
-    private val onItemClick: (folder: Folder) -> Unit
+    private val onItemClick: ((folder: Folder) -> Unit)? = null,
+    private val onRemoveItem: ((folder: Folder) -> Unit)? = null
 ) : RecyclerView.Adapter<FolderAdapter.FolderViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FolderViewHolder {
@@ -32,7 +33,10 @@ class FolderAdapter(
         fun bind(data : Folder) {
             binding.tvNameFolder.text = data.name
             binding.lnItemFolder.setOnClickListener {
-                onItemClick.invoke(data)
+                onItemClick?.invoke(data)
+            }
+            binding.ivDelete.setOnClickListener {
+                onRemoveItem?.invoke(data)
             }
         }
     }

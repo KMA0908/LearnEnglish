@@ -25,7 +25,7 @@ class AddWordTopicActivity: BaseActivity<ActivityAddWordTopicBinding, SplashView
         binding.tvDone.setOnClickListener {
             sqlHelper.addWord(Word(binding.edtNameWord.text.toString(),binding.edtMeaningWord.text.toString(),
                 0),id = intent.getIntExtra(WordTopicActivity.TOPIC_ID,0))
-            val index = topic.total++
+            val index = ++topic.total
             sqlHelper.updateTopic(Topic(topic.id,topic.name,index, topic.mode))
             finish()
         }

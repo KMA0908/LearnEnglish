@@ -33,9 +33,9 @@ class PublicFragment : BaseFragment<FragmentPublicBinding>() {
         list = mutableListOf<Topic>()
 
         topicAdapter = TopicAdapter(list){
-            val intent = Intent(activity, WordTopicActivity::class.java)
-            intent.putExtra("TOPIC_WORD", it)
-            startActivity(intent)
+//            val intent = Intent(activity, WordTopicActivity::class.java)
+//            intent.putExtra("TOPIC_WORD", it)
+//            startActivity(intent)
         }
         binding.rcvPublic.adapter = topicAdapter
         binding.rcvPublic.layoutManager = LinearLayoutManager(requireContext())

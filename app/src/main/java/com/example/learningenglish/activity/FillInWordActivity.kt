@@ -26,7 +26,10 @@ class FillInWordActivity : BaseActivity<ActivityFillWordBinding, MainViewModel>(
         binding.tvWord.text = listWord[index].name
         binding.tvOk.setOnClickListener {
             if (listWord[index].name.equals(binding.tvWordMean.text.toString())) {
-                val stateWord = listWord[index].learState++
+                var stateWord = 0
+                if (listWord[index].learState < 3) {
+                    stateWord = ++listWord[index].learState
+                }
                 sqlHelper.updateWord(Word(listWord[index].id,listWord[index].name,listWord[index].meaning, stateWord))
                 Toast.makeText(this@FillInWordActivity, "Chính xác", Toast.LENGTH_SHORT).show()
             }

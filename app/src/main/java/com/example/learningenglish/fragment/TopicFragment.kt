@@ -1,6 +1,7 @@
 package com.example.learningenglish.fragment
 
 import android.content.Intent
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.learningenglish.R
@@ -22,12 +23,15 @@ class TopicFragment : BaseFragment<FragmentTopicBinding>() {
     override fun initViews() {
         val listTopic = sqlHelper.getAllTopic()
         listTopic.let {
-            topicAdapter = TopicAdapter(it) { topic ->
+            topicAdapter = TopicAdapter(it,{ topic ->
                 val intent = Intent(activity, WordTopicActivity::class.java)
                 intent.putExtra(WordTopicActivity.TOPIC_WORD, topic.id)
                 intent.putExtra(WordTopicActivity.TOPIC_DATA, topic)
                 startActivity(intent)
-            }
+            }, {
+                sqlHelper.deleteTopic(it.id)
+                Toast.makeText(activity,"Đã xóa topic", Toast.LENGTH_SHORT).show()
+            })
             binding.rcvTopic.adapter = topicAdapter
             binding.rcvTopic.layoutManager = LinearLayoutManager(activity)
         }

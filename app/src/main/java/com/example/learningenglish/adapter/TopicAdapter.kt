@@ -8,7 +8,8 @@ import com.example.learningenglish.model.Topic
 
 class TopicAdapter(
     private var topicList: List<Topic>,
-    private val onItemClick: (topic: Topic) -> Unit
+    private val onItemClick: ((topic: Topic) -> Unit)? = null,
+    private val onRemoveItem: ((topic: Topic) -> Unit)? = null
 ) : RecyclerView.Adapter<TopicAdapter.TopicViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopicViewHolder {
@@ -37,7 +38,10 @@ class TopicAdapter(
                 1 -> binding.tvModeTopic.text = "Public"
             }
             binding.lnItemTopic.setOnClickListener {
-                onItemClick.invoke(data)
+                onItemClick?.invoke(data)
+            }
+            binding.ivDelete.setOnClickListener {
+                onRemoveItem?.invoke(data)
             }
         }
     }

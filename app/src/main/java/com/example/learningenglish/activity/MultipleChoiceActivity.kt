@@ -29,28 +29,40 @@ class MultipleChoiceActivity : BaseActivity<ActivityMultipleChoiceBinding, MainV
         binding.tvWordC.text = listWord[index].name
         binding.tvWordD.text = listWord[index].learState.toString()
         binding.tvWordA.setOnClickListener {
-            val stateWord = listWord[index].learState++
+            var stateWord = 0
+            if (listWord[index].learState < 3) {
+                stateWord = ++listWord[index].learState
+            }
             sqlHelper.updateWord(Word(listWord[index].id,listWord[index].name,listWord[index].meaning, stateWord))
             Toast.makeText(this@MultipleChoiceActivity, "Chính xác", Toast.LENGTH_SHORT).show()
             index++
             reloadData()
         }
         binding.tvWordB.setOnClickListener {
-            val stateWord = listWord[index].learState++
+            var stateWord = 0
+            if (listWord[index].learState < 3) {
+                stateWord = ++listWord[index].learState
+            }
             sqlHelper.updateWord(Word(listWord[index].id,listWord[index].name,listWord[index].meaning, stateWord))
             Toast.makeText(this@MultipleChoiceActivity, "Chưa chính xác", Toast.LENGTH_SHORT).show()
             index++
             reloadData()
         }
         binding.tvWordC.setOnClickListener {
-            val stateWord = listWord[index].learState++
+            var stateWord = 0
+            if (listWord[index].learState < 3) {
+                stateWord = ++listWord[index].learState
+            }
             sqlHelper.updateWord(Word(listWord[index].id,listWord[index].name,listWord[index].meaning, stateWord))
             Toast.makeText(this@MultipleChoiceActivity, "Chưa chính xác", Toast.LENGTH_SHORT).show()
             index++
             reloadData()
         }
         binding.tvWordD.setOnClickListener {
-            val stateWord = listWord[index].learState++
+            var stateWord = 0
+            if (listWord[index].learState < 3) {
+                stateWord = ++listWord[index].learState
+            }
             sqlHelper.updateWord(Word(listWord[index].id,listWord[index].name,listWord[index].meaning, stateWord))
             Toast.makeText(this@MultipleChoiceActivity, "Chưa chính xác", Toast.LENGTH_SHORT).show()
             index++
