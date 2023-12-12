@@ -12,7 +12,7 @@ class FlipViewEnglish(context: Context?, attrs: AttributeSet?) :
     View(context, attrs) {
     private val frontText = "Card English"
     var backText = "Back"
-    private var isFlipped = false
+    var isFlipped = false
     private val paintText: Paint = Paint()
     private val paintBackground: Paint
 

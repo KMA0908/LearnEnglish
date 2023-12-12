@@ -30,6 +30,7 @@ class TopicFragment : BaseFragment<FragmentTopicBinding>() {
                 startActivity(intent)
             }, {
                 sqlHelper.deleteTopic(it.id)
+                sqlHelper.deleteWord(it.id)
                 Toast.makeText(activity,"Đã xóa topic", Toast.LENGTH_SHORT).show()
             })
             binding.rcvTopic.adapter = topicAdapter

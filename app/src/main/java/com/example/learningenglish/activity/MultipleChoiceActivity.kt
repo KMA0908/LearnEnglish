@@ -12,6 +12,7 @@ import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MultipleChoiceActivity : BaseActivity<ActivityMultipleChoiceBinding, MainViewModel>() {
+    private lateinit var listData: ArrayList<String>
     private lateinit var listResult: MutableList<String>
     private lateinit var listWord: List<Word>
     private val sqlHelper: SQLHelper by inject()
@@ -26,7 +27,7 @@ class MultipleChoiceActivity : BaseActivity<ActivityMultipleChoiceBinding, MainV
     override fun initViews() {
         listWord = sqlHelper.getAllWordTopic()
         binding.tvWord.text = listWord[index].name
-        val listData= WordGenerator().generateRandomStrings() as ArrayList
+        listData= WordGenerator().generateRandomStrings() as ArrayList
         listData.add(listWord[index].meaning)
         listResult = listData.toMutableList()
         listResult.shuffle()
@@ -75,6 +76,11 @@ class MultipleChoiceActivity : BaseActivity<ActivityMultipleChoiceBinding, MainV
             finish()
         } else {
             binding.tvWord.text = listWord[index].name
+            listData.clear()
+            listData= WordGenerator().generateRandomStrings() as ArrayList
+            listData.add(listWord[index].meaning)
+            listResult = listData.toMutableList()
+            listResult.shuffle()
             binding.tvWordA.text = listResult[0]
             binding.tvWordB.text = listResult[1]
             binding.tvWordC.text = listResult[2]

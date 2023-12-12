@@ -6,16 +6,20 @@ import com.example.learningenglish.base.BaseActivity
 import com.example.learningenglish.database.SQLHelper
 import com.example.learningenglish.databinding.ActivityFlashCardBinding
 import com.example.learningenglish.model.Word
+import com.example.learningenglish.utils.WordGenerator
 import com.example.learningenglish.viewmodel.MainViewModel
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FlashCardActivity : BaseActivity<ActivityFlashCardBinding, MainViewModel>() {
+    private lateinit var listData: ArrayList<String>
     private lateinit var listWord: List<Word>
+    private lateinit var listResult: MutableList<String>
     private val sqlHelper: SQLHelper by inject()
     private var index = 0
     private var trueText = ""
     private var selectedText = ""
+    private var isSelected = false
     companion object {
         private val TAG = MainActivity::class.java.name
     }
@@ -25,7 +29,16 @@ class FlashCardActivity : BaseActivity<ActivityFlashCardBinding, MainViewModel>(
     override fun initViews() {
         listWord = sqlHelper.getAllWordTopic()
         binding.tvWord.text = listWord[index].name
+        listData= WordGenerator().generateRandomStrings() as ArrayList
+        listData.add(listWord[index].meaning)
+        listResult = listData.toMutableList()
+        listResult.shuffle()
+        binding.tvWord.text = listWord[index].name
         trueText = listWord[index].meaning
+        binding.flipTextView1.getTextBackData(listResult[0])
+        binding.flipTextView2.getTextBackData(listResult[1])
+        binding.flipTextView3.getTextBackData(listResult[2])
+        binding.flipTextView4.getTextBackData(listResult[3])
         setupClickListeners()
         binding.tvOk.setOnClickListener {
             if (trueText == selectedText) {
@@ -43,36 +56,48 @@ class FlashCardActivity : BaseActivity<ActivityFlashCardBinding, MainViewModel>(
         }
     }
     private fun reloadData() {
-        binding.tvWord.text = listWord[index].name
+        if (index >= listWord.size) {
+            Toast.makeText(this@FlashCardActivity,"Đã hết từ vựng", Toast.LENGTH_SHORT).show()
+            finish()
+        } else {
+            binding.tvWord.text = listWord[index].name
+            val flipViews = listOf(binding.flipTextView1, binding.flipTextView2, binding.flipTextView3, binding.flipTextView4)
+            flipViews.forEachIndexed { index, flipView ->
+                flipViews.filter { it != flipView && it.isFlipped }.forEach {
+                    it.flip()
+                }
+            }
+            listData.clear()
+            listData= WordGenerator().generateRandomStrings() as ArrayList
+            listData.add(listWord[index].meaning)
+            listResult = listData.toMutableList()
+            listResult.shuffle()
+            binding.flipTextView1.getTextBackData(listResult[0])
+            binding.flipTextView2.getTextBackData(listResult[1])
+            binding.flipTextView3.getTextBackData(listResult[2])
+            binding.flipTextView4.getTextBackData(listResult[3])
+            trueText = listWord[index].meaning
+        }
     }
     private fun setupClickListeners() {
-        binding.flipTextView1.setOnClickListener {
-            selectedText = listWord[index].meaning.toString()
-            binding.flipTextView1.getTextBackData(selectedText)
-            binding.flipTextView1.flip()
-            binding.flipTextView1.flip()
-        }
-        binding.flipTextView2.setOnClickListener {
-            selectedText = listWord[index].id.toString()
-            binding.flipTextView1.getTextBackData(selectedText)
-            binding.flipTextView2.flip()
-            binding.flipTextView2.flip()
-        }
+        val flipViews = listOf(binding.flipTextView1, binding.flipTextView2, binding.flipTextView3, binding.flipTextView4)
+        flipViews.forEachIndexed { index, flipView ->
+            flipView.setOnClickListener {
+                if (!flipView.isFlipped) {
+                    // Nếu có bất kỳ FlipView nào khác đang lật, chuyển chúng về trạng thái không lật
+                    flipViews.filter { it != flipView && it.isFlipped }.forEach {
+                        it.flip()
+                    }
 
-        binding.flipTextView3.setOnClickListener {
-            selectedText = listWord[index].learState.toString()
-            binding.flipTextView1.getTextBackData(selectedText)
-            binding.flipTextView3.flip()
-            binding.flipTextView3.flip()
+                    isSelected = !isSelected
+                    if (isSelected) {
+                        selectedText = listResult[index]
+                        flipView.flip()
+                    }
+                }
+            }
         }
-
-        binding.flipTextView4.setOnClickListener {
-            selectedText = listWord[index].name
-            binding.flipTextView1.getTextBackData(selectedText)
-            binding.flipTextView4.flip()
-            binding.flipTextView4.flip()
-        }
-
     }
+
     override fun getLayoutId() = R.layout.activity_flash_card
 }

@@ -223,4 +223,11 @@ class SQLHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, nu
         val sqLiteDatabase = writableDatabase
         return sqLiteDatabase.delete("folder", whereClause, whereArgs)
     }
+    fun deleteWord(id: Int): Int {
+        val sqLiteDatabase = writableDatabase
+        val whereClause = "topic_id = ?"
+        val whereArgs = arrayOf(Integer.toString(id))
+        return sqLiteDatabase.delete("word", whereClause, whereArgs)
+    }
+
 }
