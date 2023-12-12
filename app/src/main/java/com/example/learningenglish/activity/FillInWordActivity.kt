@@ -25,7 +25,7 @@ class FillInWordActivity : BaseActivity<ActivityFillWordBinding, MainViewModel>(
         listWord = sqlHelper.getAllWordTopic()
         binding.tvWord.text = listWord[index].name
         binding.tvOk.setOnClickListener {
-            if (listWord[index].name.equals(binding.tvWordMean.text.toString())) {
+            if (listWord[index].meaning == binding.tvWordMean.text.toString()) {
                 var stateWord = 0
                 if (listWord[index].learState < 3) {
                     stateWord = ++listWord[index].learState
@@ -40,7 +40,11 @@ class FillInWordActivity : BaseActivity<ActivityFillWordBinding, MainViewModel>(
     }
 
     private fun reloadData() {
-        binding.tvWord.text = listWord[index].name
+        if (index >= listWord.size) {
+            Toast.makeText(this@FillInWordActivity,"Đã hết từ vựng", Toast.LENGTH_SHORT).show()
+            finish()
+        }
+        else binding.tvWord.text = listWord[index].name
     }
 
     override fun getLayoutId() = R.layout.activity_fill_word
